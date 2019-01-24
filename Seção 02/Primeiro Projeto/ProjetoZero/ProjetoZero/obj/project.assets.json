@@ -11800,11 +11800,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\elias\\Desktop\\ASPNETCoreMVCLojaVirtual\\Seção 02\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\ProjetoZero.csproj",
+      "projectUniqueName": "C:\\Users\\elias\\Desktop\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\ProjetoZero.csproj",
       "projectName": "ProjetoZero",
-      "projectPath": "C:\\Users\\elias\\Desktop\\ASPNETCoreMVCLojaVirtual\\Seção 02\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\ProjetoZero.csproj",
+      "projectPath": "C:\\Users\\elias\\Desktop\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\ProjetoZero.csproj",
       "packagesPath": "C:\\Users\\elias\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\elias\\Desktop\\ASPNETCoreMVCLojaVirtual\\Seção 02\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\obj\\",
+      "outputPath": "C:\\Users\\elias\\Desktop\\Primeiro Projeto\\ProjetoZero\\ProjetoZero\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

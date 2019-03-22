@@ -1,0 +1,92 @@
+﻿
+@{
+    ViewData["Title"] = "Contato";
+    LojaVirtual.Models.Contato contato = (LojaVirtual.Models.Contato) ViewData["CONTATO"];
+}
+<main role="main">
+    <br />
+    <br />
+    <div class="container">
+        <div class="row">
+            <aside class="col-md-6">
+                <h4 class="subtitle-doc">
+                    # Outros contatos
+                    <a href="#" data-html="code_desc_simple" class="showcode">[code]</a>
+                </h4>
+                <div id="code_desc_simple">
+                    <div class="box">
+                        <dl>
+                            <dt>Devolução/Garantia: </dt>
+                            <dd>devolucao@lojavirtual.com.br</dd>
+                        </dl>
+                        <dl>
+                            <dt>Televendas: </dt>
+                            <dd>(61) 4000-2000</dd>
+                        </dl>
+                        <dl>
+                            <dt>SAC:</dt>
+                            <dd>sac@lojavirtual.com.br</dd>
+                        </dl>
+                    </div> <!-- box.// -->
+                </div> <!-- code-wrap.// -->
+            </aside>
+            <aside class="col-sm-6">
+
+                <h4 class="subtitle-doc">
+                    # Contato
+                </h4>
+                <div>
+                    <article class="card">
+                        <div class="card-body p-5">
+                            @if (ViewData["MSG_S"] != null)
+                            {
+                                <p class="alert alert-success">@ViewData["MSG_S"]</p>
+                            }
+
+                            @if (ViewData["MSG_E"] != null)
+                            {
+                                <p class="alert alert-danger">@Html.Raw(ViewData["MSG_E"])</p>
+                            }
+
+
+                            <form role="form" method="post" action="/Home/ContatoAcao">
+                                <div class="form-group">
+                                    <label for="nome">Nome</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-user"></i></span>
+                                        </div>
+                                        <input type="text" id="nome" class="form-control" name="nome" placeholder=""
+                                               required="" value="@(contato != null ? contato.Nome : "")">
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="email">E-mail</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-at"></i></span>
+                                        </div>
+                                        <input type="text" class="form-control" name="email" id="email" placeholder=""  value="@(contato != null ? contato.Email : "")">
+                                    </div>
+                                </div>
+
+                                <div class="row">
+                                    <div class="col-sm-12">
+                                        <div class="form-group">
+                                            <label for="texto"><span class="hidden-xs">Texto</span> </label>
+                                            <div class="form-inline">
+                                                <textarea class="form-control" name="texto" id="texto" style="width:100%">@(contato != null ? contato.Texto : "")</textarea>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <button class="subscribe btn btn-primary btn-block" type="submit"> Enviar </button>
+                            </form>
+                        </div>
+                    </article>
+                </div>
+            </aside>
+        </div>
+    </div>
+</main>

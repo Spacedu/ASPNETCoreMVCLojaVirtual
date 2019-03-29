@@ -1,0 +1,117 @@
+﻿@model List<Categoria>
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <a class="navbar-brand" href="/"> LojaVirtual</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <div class="dropdown">
+            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+            </button>
+            <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                <li class="dropdown-item"><a href="#">Some action</a></li>
+                <li class="dropdown-item"><a href="#">Some other action</a></li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-submenu">
+                    <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
+                        <li class="dropdown-submenu">
+                            <a class="dropdown-item" href="#">Even More..</a>
+                            <ul class="dropdown-menu">
+                                <li class="dropdown-item"><a href="#">3rd level</a></li>
+                                <li class="dropdown-submenu">
+                                    <a class="dropdown-item" href="#">another level</a>
+                                    <ul class="dropdown-menu">
+                                        <li class="dropdown-item"><a href="#">4th level</a></li>
+                                        <li class="dropdown-item"><a href="#">4th level</a></li>
+                                        <li class="dropdown-submenu">
+                                            <a class="dropdown-item" href="#">another level</a>
+                                            <ul class="dropdown-menu">
+                                                <li class="dropdown-item"><a href="#">5th level</a></li>
+                                                <li class="dropdown-item"><a href="#">5th level</a></li>
+                                                <li class="dropdown-item"><a href="#">5th level</a></li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="dropdown-item"><a href="#">3rd level</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-item"><a href="#">Second level</a></li>
+                        <li class="dropdown-item"><a href="#">Second level</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        @{
+            var TodasCategorias = Model.ToList();
+        }
+        @if (TodasCategorias != null && TodasCategorias.Count > 0)
+        {
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Categoria
+                </button>
+                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
+                    @{
+                        var CategoriasPrincipais = TodasCategorias.Where(a => a.CategoriaPaiId == null).ToList();
+                    }
+                    @foreach (var categoria in CategoriasPrincipais)
+                    {
+                        var CategoriasFilho = TodasCategorias.Where(a => a.CategoriaPaiId == categoria.Id);
+                        if (CategoriasFilho.Count() > 0)
+                        {
+                            <li class="dropdown-submenu">
+                                <a class="dropdown-item" tabindex="-1" href="#">@categoria.Nome</a>
+                                <ul class="dropdown-menu">
+                                    @foreach (var categoriaF in CategoriasFilho)
+                                    {
+                                        <li class="dropdown-item"><a href="#">@categoriaF.Nome</a></li>
+                                    }
+                                </ul>
+                            </li>
+                        }
+                        else
+                        {
+                            <li class="dropdown-item"><a href="#">@categoria.Nome</a></li>
+                        }
+
+                    }
+                </ul>
+            </div>
+        }
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+                <a class="nav-link" href="/"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+            </li>
+            @if (Model != null && Model.Count > 0)
+            {
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                       aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-list-ul"></i> Categorias
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        @foreach (var categoria in Model)
+                        {
+                            <a class="dropdown-item" href="#">@categoria.Nome</a>
+                        }
+
+                    </div>
+                </li>
+            }
+            <li class="nav-item">
+                <a class="nav-link" href="/Home/Contato"><i class="far fa-address-book"></i> Contato </a>
+            </li>
+        </ul>
+        <form class="form-inline my-2 my-lg-0">
+            <input class="form-control mr-sm-2" type="search" placeholder="palavra" aria-label="Search">
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+            <a class="nav-link" href="/Home/Login"><i class="fas fa-user-alt"></i> Login</a>
+            <a class="nav-link" href="/Home/CarrinhoCompras"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+        </form>
+    </div>
+</nav>

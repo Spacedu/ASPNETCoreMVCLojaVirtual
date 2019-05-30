@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>@ViewBag.Title</title>
+
+    <meta name="description" content="Loja Virtual em ASP.NET">
+    <meta name="author" content="Elias Ribeiro">
+    <link rel="stylesheet" href="/resources/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/resources/lib/caroussel/carousel.css" />
+    <link rel="stylesheet" href="/resources/lib/bootstrap-ecommerce-uikit/css/ui.css" />
+    <link rel="stylesheet" href="/resources/lib/bootstrap-ecommerce-uikit/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+          crossorigin="anonymous">
+    <link rel="stylesheet" href="~/css/StyleSheet.css" />
+    <link rel="stylesheet" href="~/resources/lib/pagedlist/PagedList.css" />
+    <link rel="stylesheet" href="~/resources/lib/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/fancybox/fancybox.min.css" />
+    
+</head>
+<body>
+    <header>
+        @{
+            /*
+             * await Component.InvokeAsync("Menu")
+             */
+        }
+        <vc:menu></vc:menu>
+    </header>
+    <div>
+        @RenderBody()
+    </div>
+    <hr class="featurette-divider">
+
+    <!-- FOOTER -->
+    <footer class="container">
+        <p class="float-right"><a href="#">Back to top</a></p>
+        <p>&copy; 2017-@DateTime.Now.Year - LojaVirtual, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+    </footer>
+
+    <!-- Bootstrap core JavaScript
+          ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="/resources/lib/holder/holder.min.js"></script>
+    <script src="/resources/lib/jquery3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="/resources/lib/popper1.14.6/popper.min.js"></script>
+    <script src="/resources/lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+    <script src="~/resources/lib/bootstrap-ecommerce-uikit/ui-ecommerce/plugins/fancybox/fancybox.min.js"></script>
+    <script src="~/js/ActionsVisitante.js"></script>
+</body>
+</html>

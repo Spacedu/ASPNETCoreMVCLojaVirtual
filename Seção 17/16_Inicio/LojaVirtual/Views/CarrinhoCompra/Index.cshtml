@@ -1,0 +1,122 @@
+﻿@model List<LojaVirtual.Models.ProdutoAgregador.ProdutoItem>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container">
+    <section id="order">
+        <br />
+        <br />
+        <h2 class="title-doc">Carrinho de compras</h2>
+
+        <div id="code_cart">
+            <div class="card">
+                <table class="table table-hover shopping-cart-wrap">
+                    <thead class="text-muted">
+                        <tr>
+                            <th scope="col">Produto</th>
+                            <th scope="col" width="120">Quantidade</th>
+                            <th scope="col" width="120">Preço</th>
+                            <th scope="col" width="200" class="text-right">Ação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    <figure class="media">
+                                        <div class="img-wrap"><img src="images/items/1.jpg" class="img-thumbnail img-sm"></div>
+                                        <figcaption class="media-body">
+                                            <h6 class="title text-truncate">@item.Nome</h6>
+                                            <dl class="dlist-inline small">
+                                                <dt>Size: </dt>
+                                                <dd>XXL</dd>
+                                            </dl>
+                                        </figcaption>
+                                    </figure>
+                                </td>
+                                <td>
+                                    <div class="col-auto">
+                                        <label class="sr-only" for="inlineFormInputGroup">Username</label>
+                                        <div class="input-group mb-2">
+                                            <div class="input-group-prepend">
+                                                <a href="#" class="btn btn-primary"> - </a>
+                                            </div>
+                                            <input type="text" style="width: 60px; text-align: center" readonly="readonly" class="form-control" value="@item.QuantidadeProdutoCarrinho">
+                                            <div class="input-group-append">
+                                                <a href="#" class="btn btn-primary"> + </a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td>
+                                    <div class="price-wrap">
+                                        <var class="price">@((item.Valor * item.QuantidadeProdutoCarrinho).ToString("C"))</var>
+                                        <small class="text-muted">(@item.Valor.ToString("C") cada)</small>
+                                    </div>
+                                </td>
+                                <td class="text-right">
+                                    <a asp-controller="CarrinhoCompra" asp-action="RemoverItem" asp-route-id="@item.Id" class="btn btn-outline-danger"> × Remove</a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+
+    <section id="parameters">
+        <h2 class="title-doc"># Description lists</h2>
+        <div class="row">
+            
+            <aside class="col-md-4">
+                <h4 class="subtitle-doc">
+                    Frete
+                </h4>
+                <div id="code_desc_align">
+                    <div class="box">
+                        <dl class="dlist-align">
+                            <dt>CEP: </dt>
+                            <dd><input type="text" name="cep" class="form-control" /> </dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt><input type="radio" name="frete" value="sedex" /></dt>
+                            <dd>SEDEX - R$ 99,86</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt><input type="radio" name="frete" value="pac" /></dt>
+                            <dd>PAC - R$ 66,30</dd>
+                        </dl>
+                    </div> <!-- box.// -->
+                </div> <!-- code-wrap.// -->
+            </aside>
+            <aside class="col-md-4">
+                <h4 class="subtitle-doc">
+                    Resumo
+                    <a href="#" data-html="code_desc_right" class="showcode">[code]</a>
+                </h4>
+                <div id="code_desc_right">
+                    <div class="box">
+                        <dl class="dlist-align">
+                            <dt>Subtotal: </dt>
+                            <dd class="text-right">R$ 120,00</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>Frete:</dt>
+                            <dd class="text-right">R$ 66,30</dd>
+                        </dl>
+                        <dl class="dlist-align">
+                            <dt>TOTAL:</dt>
+                            <dd class="text-right">R$ 186,30</dd>
+                        </dl>
+                    </div> <!-- box.// -->
+                </div> <!-- code-wrap.// -->
+            </aside>
+        </div> <!-- row.// -->
+
+    </section>
+
+</div>

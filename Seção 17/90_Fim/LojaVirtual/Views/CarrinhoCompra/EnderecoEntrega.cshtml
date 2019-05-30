@@ -1,0 +1,98 @@
+﻿
+@{
+    ViewData["Title"] = "EnderecoEntrega";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input type="radio" name="endereco" value="0" id="0-end" />
+                            <input type="hidden" name="cep" value="@ViewBag.Cliente.CEP" />
+                        </th>
+                        <td>
+                            <label for="0-end">
+                                <strong>Nome: </strong> Endereço do cliente.
+                                <p>
+                                    @ViewBag.Cliente.CEP | @ViewBag.Cliente.Estado, @ViewBag.Cliente.Cidade, @ViewBag.Cliente.Bairro, @ViewBag.Cliente.Endereco, @ViewBag.Cliente.Complemento, @ViewBag.Cliente.Numero
+                                </p>
+                            </label>
+                        </td>
+                    </tr>
+
+                    @foreach (EnderecoEntrega endereco in ViewBag.Enderecos)
+                    {
+                        <tr>
+                            <th scope="row">
+                                <input type="radio" name="endereco" value="@endereco.Id" id="@endereco.Id-end" />
+                                <input type="hidden" name="cep" value="@endereco.CEP" />
+                            </th>
+                            <td>
+                                <label for="@endereco.Id-end">
+                                    <strong>Nome: </strong> @endereco.Nome
+                                    <p>
+                                        @endereco.CEP | @endereco.Estado, @endereco.Cidade, @endereco.Bairro, @endereco.Endereco, @endereco.Complemento, @endereco.Numero
+                                    </p>
+                                </label>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+
+
+            <div class="text-center">
+                <a asp-action="CadastroEnderecoEntrega" asp-controller="Home" asp-area="Cliente" asp-route-returnUrl="@Url.Action("EnderecoEntrega", "CarrinhoCompra", new { area = ""})" class="btn btn-outline-primary">Cadastrar novo endereço</a>
+            </div>
+
+            <br />
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">PAC</h5>
+                        <p class="card-text">Dias.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <input type="radio" name="frete" value="PAC" />
+                        </small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SEDEX</h5>
+                        <p class="card-text">Dias.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <input type="radio" name="frete" value="SEDEX" />
+                        </small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">SEDEX10</h5>
+                        <p class="card-text">Dias.</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            <input type="radio" name="frete" value="SEDEX10" />
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <a asp-action="Index" asp-controller="Pagamento" class="btn btn-primary">Continuar</a>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,20 @@
+﻿
+@{
+    ViewData["Title"] = "EnderecoEntrega";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <!-- Listar os endereços -->
+            <div class="text-center">
+                <a asp-action="CadastroEnderecoEntrega" asp-controller="Home" asp-area="Cliente" asp-route-returnUrl="@Url.Action("EnderecoEntrega", "CarrinhoCompra", new { area = ""})" class="btn btn-primary">Cadastrar novo endereço</a>
+            </div>
+        </div>
+        <br />
+        <br />
+    </div>
+</div>
+

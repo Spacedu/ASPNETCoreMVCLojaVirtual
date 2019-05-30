@@ -1,0 +1,137 @@
+﻿@model List<LojaVirtual.Models.ProdutoAgregador.ProdutoItem>
+@{
+    ViewData["Title"] = "Index";
+    decimal Subtotal = 0;
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div id="code_itemside_img2">
+                <div class="box items-bordered-wrap">
+                    @foreach (var item in Model)
+                    {
+                        <figure class="itemside">
+                            <div class="aside">
+                                @if (item.Imagens.Count > 0)
+                                {
+                                    <img src="@item.Imagens.First().Caminho" class="img-sm">
+                                }
+                                else
+                                {
+                                    <img src="~/img/imagem-produto.png" class="img-sm">
+                                }
+                            </div>
+                            <figcaption class="text-wrap align-self-center">
+                                @{
+                                    var ResultadoSubtotalItem = item.Valor * item.QuantidadeProdutoCarrinho;
+                                    Subtotal = Subtotal + ResultadoSubtotalItem;
+                                }
+
+                                <h6 class="title"><strong>@item.Nome.ToUpper()</strong></h6>
+                                <div class="price-wrap">
+                                    <span class="price-new">@item.Valor.ToString("C") x @item.QuantidadeProdutoCarrinho = <strong>@ResultadoSubtotalItem.ToString("C")</strong></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    }
+                </div>
+                <div class="box">
+                    <h4 class="subtitle-doc">
+                        Resumo
+                    </h4>
+                    <dl class="dlist-align">
+                        <dt>Subtotal: </dt>
+                        <dd class="text-right subtotal">@Subtotal.ToString("C")</dd>
+                    </dl>
+                    <dl class="dlist-align">
+                        <dt>Frete:</dt>
+                        <dd class="text-right frete">PAC/SEDEX - R$ 0,00</dd>
+                    </dl>
+                    <dl class="dlist-align">
+                        <dt>TOTAL:</dt>
+                        <dd class="text-right total">R$ 0,00</dd>
+                    </dl>
+                </div>
+            </div>
+            </div>
+        <div class="col-md-6">
+            <div id="code_payment2">
+
+                <article class="card">
+                    <div class="card-body p-5">
+
+                        <ul class="nav bg radius nav-pills nav-fill mb-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active show" data-toggle="pill" href="#nav-tab-card">
+                                    <i class="fa fa-credit-card"></i> Cartão de Crédito
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                                    <i class="fab fa-paypal"></i>  Boleto Bancário
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="nav-tab-card">
+                                <p class="alert alert-danger">Some text success or error</p>
+                                <form role="form">
+                                    <div class="form-group">
+                                        <label for="username">Nome (no cartão)</label>
+                                        <input type="text" class="form-control" name="username" placeholder="" required="">
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label for="cardNumber">Número cartão</label>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="cardNumber" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text text-muted">
+                                                    <i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
+                                                    <i class="fab fa-cc-mastercard"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                    </div> 
+
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label><span class="hidden-xs">Vecimento</span> </label>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="MM" name="">
+                                                    <input type="number" class="form-control" placeholder="YY" name="">
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">Cód. segurança <i class="fa fa-question-circle"></i></label>
+                                                <input type="number" class="form-control" required="">
+                                            </div>
+                                        </div>
+                                    </div> 
+                                    <button class="subscribe btn btn-primary btn-block" type="button"> Confirmar  </button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tab-paypal">
+                                <p>Clique no botão para imprimir o boleto bancário.</p>
+                                <p>
+                                    <button type="button" class="btn btn-primary"> <i class="fab fa-barcode"></i> Imprimir boleto </button>
+                                </p>
+                            </div>
+                            
+                        </div> 
+
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+

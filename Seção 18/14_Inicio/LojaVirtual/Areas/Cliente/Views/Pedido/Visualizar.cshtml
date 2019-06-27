@@ -1,0 +1,47 @@
+﻿@model Pedido
+@{
+    ViewData["Title"] = "Visualizar";
+    TransacaoPagarMe transacao = JsonConvert.DeserializeObject<TransacaoPagarMe>(Model.DadosTransaction);
+    List<ProdutoItem> produtos = JsonConvert.DeserializeObject<List<ProdutoItem>>(Model.DadosProdutos);
+
+}
+<br /><br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            @foreach (var pedidoSituacao in Model.PedidoSituacoes)
+            {
+                pedidoSituacao.Situacao pedidoSituacao.Data
+            }
+                       
+            <h3>Dados pessoais</h3>
+            @transacao.Customer.Name - @transacao.Customer.Birthday
+
+            <h3>Entrega</h3>
+            @transacao.Shipping.Name
+
+            @transacao.Shipping.Address.Zipcode
+            @transacao.Shipping.Address.State
+            @transacao.Shipping.Address.City
+            @transacao.Shipping.Address.Neighborhood
+            @transacao.Shipping.Address.Street
+            @transacao.Shipping.Address.Complementary
+            @transacao.Shipping.Address.StreetNumber
+
+            @Model.FreteEmpresa;
+            @transacao.Shipping.Fee.ToString("C");
+            @Model.FreteCodRastreamento;
+
+
+
+            <h3>Lista de produtos</h3>
+            @foreach (var produto in produtos)
+            {
+                produto.QuantidadeProdutoCarrinho;
+                produto.Nome;
+                produto.Valor.ToString("C");
+                @((produto.Valor * produto.QuantidadeProdutoCarrinho).ToString("C"))
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,40 @@
+﻿@model LojaVirtual.Models.Cliente
+@{
+    ViewData["Title"] = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main role="main">
+    <br />
+    <br />
+    <section class="container">
+        <aside class="col-sm-4">
+            <h3 class="subtitle-doc">
+                Login
+            </h3>
+            <div id="code_login_1">
+                <div class="card">
+                    <article class="card-body">
+                        @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+                        <a asp-action="CadastroCliente" asp-controller="Home" asp-route-returnUrl="@Context.Request.Query["returnUrl"]" class="float-right btn btn-outline-primary">Cadastre-se</a>
+                        <h4 class="card-title mb-4 mt-1">Entrar</h4>
+                        <form method="post">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input asp-for="Email" class="form-control" placeholder="Email" type="email">
+                            </div>
+                            <div class="form-group">
+                                <a class="float-right" href="#">Esqueceu?</a>
+                                <label>Senha</label>
+                                <input asp-for="Senha" class="form-control" placeholder="******" type="password">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Acessar </button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>

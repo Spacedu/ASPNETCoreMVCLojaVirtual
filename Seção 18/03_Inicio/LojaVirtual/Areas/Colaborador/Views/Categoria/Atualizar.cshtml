@@ -1,0 +1,29 @@
+﻿@model LojaVirtual.Models.Categoria
+@{
+    ViewData["Title"] = "Atualizar";
+}
+
+<h1>Atualizar</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Id" />
+
+    <div class="form-group">
+        <label asp-for="Nome"></label>
+        <input asp-for="Nome" class="form-control" placeholder="Digite o nome da categoria">
+        <span asp-validation-for="Nome" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Slug"></label>
+        <input asp-for="Slug" class="form-control" placeholder="Digite o slug da categoria">
+        <span asp-validation-for="Slug" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="CategoriaPaiId"></label>
+        <select asp-for="CategoriaPaiId" class="form-control" asp-items="@ViewBag.Categorias">
+            <option value="">Selecione</option>
+        </select>
+        <span asp-validation-for="CategoriaPaiId" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Salvar</button> <a asp-action="Index" class="btn btn-info">Voltar</a>
+</form>

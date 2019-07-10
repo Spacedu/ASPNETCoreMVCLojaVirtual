@@ -1,0 +1,61 @@
+﻿@{
+    ViewData["Title"] = "Listagem de endereços para entrega";
+}
+
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <a asp-action="Index" asp-controller="Cliente" class="btn btn-outline-primary">Voltar</a>
+            <br />
+            @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+            <br />
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <td>
+                            <label for="0-end">
+                                <strong>Nome: </strong> Endereço do cliente.
+                                <p>
+                                    @ViewBag.Cliente.CEP | @ViewBag.Cliente.Estado, @ViewBag.Cliente.Cidade, @ViewBag.Cliente.Bairro, @ViewBag.Cliente.Endereco, @ViewBag.Cliente.Complemento, @ViewBag.Cliente.Numero
+                                </p>
+                            </label>
+                        </td>
+                        <td>
+                            <a asp-action="Atualizar" asp-controller="Cliente">Editar</a>
+                        </td>
+                    </tr>
+
+                    @foreach (EnderecoEntrega endereco in ViewBag.Enderecos)
+                    {
+                        <tr>
+                            <td>
+                                <label for="@endereco.Id-end">
+                                    <strong>Nome: </strong> @endereco.Nome
+                                    <p>
+                                        @endereco.CEP | @endereco.Estado, @endereco.Cidade, @endereco.Bairro, @endereco.Endereco, @endereco.Complemento, @endereco.Numero
+                                    </p>
+                                </label>
+                            </td>
+                            <td>
+                                <a asp-action="Atualizar" asp-route-id="@endereco.Id">Editar</a>
+                                <a asp-action="Excluir" asp-route-id="@endereco.Id">Remover</a>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+
+            <div class="text-center">
+                <a asp-action="Cadastrar" class="btn btn-outline-primary">Cadastrar novo endereço</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+

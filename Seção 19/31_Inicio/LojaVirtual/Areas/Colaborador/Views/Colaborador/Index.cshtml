@@ -1,0 +1,51 @@
+﻿@model X.PagedList.IPagedList<LojaVirtual.Models.Colaborador>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Colaborador</h1>
+
+<a asp-action="Cadastrar" class="btn btn-primary">Cadastrar</a>
+<br />
+<br />
+
+@{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+@if (Model.Count > 0)
+{
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Nome)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Colaborador colaborador in Model)
+                {
+                    <tr>
+                        <th scope="row">@colaborador.Id</th>
+                        <td>@colaborador.Nome</td>
+                        <td>@colaborador.Email</td>
+                        <td>
+                            <a asp-action="GerarSenha" asp-route-id="@colaborador.Id" class="btn btn-secondary">Gerar Senha</a>
+                            <a asp-action="Atualizar" asp-route-id="@colaborador.Id" class="btn btn-secondary">Atualizar</a>
+                            <a asp-action="Excluir" asp-route-id="@colaborador.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @Html.PagedListPager((IPagedList)Model, pagina => Url.Action("Index", new { pagina }))
+
+}
+else
+{
+    <span>Nenhum registro cadastrado!</span>
+}

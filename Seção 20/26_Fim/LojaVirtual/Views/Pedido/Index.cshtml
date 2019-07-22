@@ -1,0 +1,65 @@
+﻿@model LojaVirtual.Models.Pedido
+@{
+    ViewData["Title"] = "Index";
+    decimal valorTotal = 0;
+}
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Pedido</h1>
+            <div class="numero-pedido">nº @Model.Id-@Model.TransactionId</div>
+
+            <table class="table table-bordered">
+                <thread>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thread>
+
+                @foreach (ProdutoItem produto in ViewBag.Produtos)
+                {
+                    valorTotal += (produto.UnidadesPedidas * produto.Valor);
+                    <tr>
+                        <td>@produto.Nome</td>
+                        <td>@produto.UnidadesPedidas</td>
+                        <td>
+                            @((produto.UnidadesPedidas * produto.Valor).ToString("C"))
+                            (@produto.Valor.ToString("C") unid)
+                        </td>
+                    </tr>
+                }
+
+                <tr>
+                    <td colspan="2">Frete</td>
+                    <td>
+                        @{
+                            var frete = Mascara.ConverterPagarMeIntToDecimal(ViewBag.Transacao.Shipping.Fee);
+                            valorTotal += frete;
+                        }
+                        @frete.ToString("C")
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">TOTAL</td>
+                    <td>@valorTotal.ToString("C")</td>
+                </tr>
+            </table>
+
+            @if(Model.FormaPagamento == MetodoPagamentoConstant.Boleto)
+            {
+                <h3>Boleto</h3>
+                <iframe src="@ViewBag.Transacao.BoletoUrl" style="width: 100%; min-height: 400px; border: 1px solid #CCC;"></iframe>
+                <a target="_blank" href="@ViewBag.Transacao.BoletoUrl" class="btn btn-outline-secondary">Imprimir</a>
+            }
+            <br />
+            <br />
+            <a asp-action="Index" asp-controller="Home" class="btn btn-outline-primary btn-lg">Voltar a comprar</a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Painel";
+}
+
+<h1>Painel</h1>
+
+<h3>Gerais</h3>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Clientes</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: 10.000</h5>                
+                <a asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Visualizar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Newsletter</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: 3.000</h5>
+                <a href="#" class="btn btn-primary">Gerar arquivo</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Produtos</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: 10</h5>                
+                <a asp-controller="Produto" asp-action="Index" class="btn btn-primary">Gerenciar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Vendas</h3>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">NÚMERO</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: 10.000</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">TOTAL VENDIDO</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: R$ 3.000</h5>                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">FORMA DE PAGAMENTO</h5>
+            <div class="card-body">
+                <h5 class="card-title">37% Cartão de Crédido - > Boleto...</h5>                
+            </div>
+        </div>
+    </div>
+</div>

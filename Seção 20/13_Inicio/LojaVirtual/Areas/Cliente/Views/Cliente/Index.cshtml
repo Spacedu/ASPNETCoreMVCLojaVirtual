@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<div class="container">
+    @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card  text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-user-alt"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Dados pessoais</h6>
+                    <p class="card-text">Altere seu endereço de e-mail e residencial</p>
+                    <a asp-action="Atualizar" class="card-link">Alterar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card  text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-shipping-fast"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Endereços de entrega</h6>
+                    <p class="card-text">Cadastre, altere ou remova os locais de entrega.</p>
+                    <a asp-action="Index" asp-controller="EnderecoEntrega" class="card-link">Alterar</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card text-center">
+                <div class="card-body">
+                    <h5 class="card-title"><i class="fas fa-unlock-alt"></i></h5>
+                    <h6 class="card-subtitle mb-2 text-muted">Senha</h6>
+                    <p class="card-text">Altere sua senha de acesso.</p>
+                    <a asp-action="AtualizarSenha" class="card-link">Alterar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,89 @@
+2019-07-17 14:47:28.907 -03:00 [INF] --- SERVIDOR INICIANDO ---
+2019-07-17 14:47:40.191 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:47:40.258 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:47:40.301 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:47:40.303 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:47:40.688 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:47:40.689 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:47:40.690 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:47:40.691 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:47:50.182 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:47:50.184 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:47:50.184 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:47:50.185 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:47:50.185 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:47:50.186 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:47:50.187 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:47:50.188 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:48:00.182 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:48:00.183 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:48:00.183 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:48:00.184 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:48:00.184 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:48:00.185 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:48:00.185 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:48:00.189 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:48:10.183 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:48:10.184 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:48:10.184 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:48:10.184 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:48:10.185 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:48:10.186 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:48:10.186 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:48:10.187 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:48:49.417 -03:00 [INF] --- SERVIDOR INICIANDO ---
+2019-07-17 14:49:00.633 -03:00 [ERR] An unhandled exception has occurred while executing the request.
+System.Exception: Minha Exception!
+   at LojaVirtual.Controllers.HomeController.Index() in C:\Users\elias\Desktop\ASPNETCoreMVCLojaVirtual\Seção 20\16_Fim\LojaVirtual\Controllers\HomeController.cs:line 38
+   at lambda_method(Closure , Object , Object[] )
+   at Microsoft.Extensions.Internal.ObjectMethodExecutor.Execute(Object target, Object[] parameters)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionMethodExecutor.SyncActionResultExecutor.Execute(IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeActionMethodAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeNextActionFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Rethrow(ActionExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.InvokeInnerFilterAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeNextResourceFilter()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Rethrow(ResourceExecutedContext context)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeFilterPipelineAsync()
+   at Microsoft.AspNetCore.Mvc.Internal.ResourceInvoker.InvokeAsync()
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware.Invoke(HttpContext httpContext)
+   at LojaVirtual.Libraries.Middleware.ValidateAntiForgeryTokenMiddleware.Invoke(HttpContext context) in C:\Users\elias\Desktop\ASPNETCoreMVCLojaVirtual\Seção 20\16_Fim\LojaVirtual\Libraries\Middleware\ValidateAntiForgeryTokenMiddleware.cs:line 31
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Session.SessionMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.ExceptionHandlerMiddleware.Invoke(HttpContext context)
+2019-07-17 14:49:00.653 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:49:00.653 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:49:01.115 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:49:01.115 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:49:01.117 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:49:01.117 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:49:01.121 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:49:01.121 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:49:01.500 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:49:01.501 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:49:01.501 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:49:01.502 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:49:01.523 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:49:01.523 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:49:01.524 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:49:01.524 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:49:10.663 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:49:10.666 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:49:10.666 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:49:10.667 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:49:10.667 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:49:10.668 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:49:10.668 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:49:10.669 -03:00 [INF] > PedidoFinalizadoJob: Finalizado
+2019-07-17 14:49:20.593 -03:00 [INF] > PedidoDevolverEntregueJob: Iniciando
+2019-07-17 14:49:20.605 -03:00 [INF] > PedidoDevolverEntregueJob: Finalizado
+2019-07-17 14:49:20.606 -03:00 [INF] > PedidoEntregueJob: Iniciando
+2019-07-17 14:49:20.608 -03:00 [INF] > PedidoEntregueJob: Finalizado
+2019-07-17 14:49:20.609 -03:00 [INF] > PedidoPagamentoSituacaoJob: Iniciando
+2019-07-17 14:49:20.610 -03:00 [INF] > PedidoPagamentoSituacaoJob: Finalizado
+2019-07-17 14:49:20.610 -03:00 [INF] > PedidoFinalizadoJob: Iniciando
+2019-07-17 14:49:20.611 -03:00 [INF] > PedidoFinalizadoJob: Finalizado

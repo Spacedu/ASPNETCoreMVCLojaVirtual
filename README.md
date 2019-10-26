@@ -7,6 +7,11 @@ Quais recursos e tecnologias você irá aprender:
 
 · HTTP/HTTPS e todo o ecossistema de funcionamento da internet para que os sites funcionem.
 
+__Pasta e seus destinos: 
+·· "Código-Fonte - Passo a Passo" - Use para consultar via Github (Browser) o código-fonte.
+·· "Código-Fonte - Compactado" - Use para baixar o código-fonte da última aula de cada seção.
+
+
 __· ASP.NET Core MVC:__
 
 ·· Cookie

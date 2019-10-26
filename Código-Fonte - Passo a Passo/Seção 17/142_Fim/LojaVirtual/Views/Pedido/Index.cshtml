@@ -1,0 +1,53 @@
+﻿@model LojaVirtual.Models.Pedido
+@{
+    ViewData["Title"] = "Index";
+}
+<br />
+<br />
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1>Pedido nº @Model.Id-@Model.TransactionId</h1>
+
+            <table class="table table-bordered">
+                <thread>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Quantidade</th>
+                        <th>Valor</th>
+                    </tr>
+                </thread>
+
+                @foreach (ProdutoItem produto in ViewBag.Produtos)
+                {
+                    <tr>
+                        <td>@produto.Nome</td>
+                        <td>@produto.QuantidadeProdutoCarrinho</td>
+                        <td>
+                            @((produto.QuantidadeProdutoCarrinho * produto.Valor).ToString("C"))
+                            (@produto.Valor.ToString("C") unid)
+                        </td>
+                    </tr>
+                }
+
+                <tr>
+                    <td colspan="2">Frete</td>
+                    <td>Valor</td>
+                </tr>
+                <tr>
+                    <td colspan="2">TOTAL</td>
+                    <td>R$ 1000.00</td>
+                </tr>
+            </table>
+
+            @if(Model.FormaPagamento == MetodoPagamentoConstant.Boleto)
+            {
+                <h3>Boleto</h3>
+            }
+
+            <a asp-action="Index" asp-controller="Home" class="btn btn-outline-primary btn-lg">Voltar a comprar</a>
+        </div>
+    </div>
+</div>
+
+

@@ -1,0 +1,41 @@
+
+/* ========================
+UIkit bootstrap-ecommerce.com 
+===================== */
+
+@import "variables-custom"; 
+
+
+@import "ui-assets/base"; 
+
+/* ================== HELPERS  =================== */
+@import "ui-assets/helpers/mixins";
+@import "ui-assets/helpers/helper-classes"; 
+@import "ui-assets/helpers/bg";
+@import "ui-assets/helpers/typography"; 
+@import "ui-assets/helpers/grid-24";
+
+
+
+/* ================== SECTIONS =================== */
+@import "ui-assets/sections/header";
+@import "ui-assets/sections/footer";
+@import "ui-assets/sections/sidebar";
+
+/* ================== PAGES =================== */
+@import "ui-assets/pages/page-home";
+@import "ui-assets/pages/page-common";
+@import "ui-assets/pages/page-detail";
+
+/* ================== COMPONENTS =================== */
+@import "ui-assets/components/plugin-styles";
+@import "ui-assets/components/buttons";
+@import "ui-assets/components/items";
+@import "ui-assets/components/lists";
+@import "ui-assets/components/cards-product";
+@import "ui-assets/components/elements.scss";
+@import "ui-assets/components/menu";
+
+
+
+

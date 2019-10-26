@@ -1,0 +1,209 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ASP.NET Core MVC - Loja Virtual</title>
+    <meta name="description" content="Loja Virtual em ASP.NET">
+    <meta name="author" content="Elias Ribeiro">
+    <link rel="stylesheet" href="resources/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/lib/caroussel/carousel.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/ui.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"> LojaVirtual</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list-ul"></i> Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html"><i class="far fa-address-book"></i> Contato </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+
+
+
+                    <input class="form-control mr-sm-2" type="search" placeholder="palavra" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-alt"></i> Login</a>
+                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+
+
+
+
+
+        <div class="container" id="code_prod_detail" style="margin-top: 50px">
+            <div class="card">
+                <div class="row no-gutters">
+                    <aside class="col-sm-5 border-right">
+                        <article class="gallery-wrap">
+                            <div class="img-big-wrap">
+                                <div> <a href="images/items/1.jpg" data-fancybox=""><img src="images/items/1.jpg"></a></div>
+                            </div> <!-- slider-product.// -->
+                            <div class="img-small-wrap">
+                                <div class="item-gallery"> <img src="images/items/1.jpg"></div>
+                                <div class="item-gallery"> <img src="images/items/2.jpg"></div>
+                                <div class="item-gallery"> <img src="images/items/3.jpg"></div>
+                                <div class="item-gallery"> <img src="images/items/4.jpg"></div>
+                            </div> <!-- slider-nav.// -->
+                        </article> <!-- gallery-wrap .end// -->
+                    </aside>
+                    <aside class="col-sm-7">
+                        <article class="p-5">
+                            <h3 class="title mb-3">Original Version of Some product name</h3>
+
+                            <div class="mb-3">
+                                <var class="price h3 text-warning">
+                                    <span class="currency">US $</span><span class="num">1299</span>
+                                </var>
+                                <span>/per kg</span>
+                            </div> <!-- price-detail-wrap .// -->
+                            <dl>
+                                <dt>Description</dt>
+                                <dd>
+                                    <p>Here goes description consectetur adipisicing elit, sed do eiusmod
+                                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                                        quis nostrud exercitation ullamco </p>
+                                </dd>
+                            </dl>
+                            <dl class="row">
+                                <dt class="col-sm-3">Model#</dt>
+                                <dd class="col-sm-9">12345611</dd>
+
+                                <dt class="col-sm-3">Color</dt>
+                                <dd class="col-sm-9">Black and white </dd>
+
+                                <dt class="col-sm-3">Delivery</dt>
+                                <dd class="col-sm-9">Russia, USA, and Europe </dd>
+                            </dl>
+                            <div class="rating-wrap">
+
+                                <ul class="rating-stars">
+                                    <li style="width:80%" class="stars-active">
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </li>
+                                    <li>
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i> <i class="fa fa-star"></i>
+                                        <i class="fa fa-star"></i>
+                                    </li>
+                                </ul>
+                                <div class="label-rating">132 reviews</div>
+                                <div class="label-rating">154 orders </div>
+                            </div> <!-- rating-wrap.// -->
+                            <hr>
+                            <div class="row">
+                                <div class="col-sm-5">
+                                    <dl class="dlist-inline">
+                                        <dt>Quantity: </dt>
+                                        <dd>
+                                            <select class="form-control form-control-sm" style="width:70px;">
+                                                <option> 1 </option>
+                                                <option> 2 </option>
+                                                <option> 3 </option>
+                                            </select>
+                                        </dd>
+                                    </dl> <!-- item-property .// -->
+                                </div> <!-- col.// -->
+                                <div class="col-sm-7">
+                                    <dl class="dlist-inline">
+                                        <dt>Size: </dt>
+                                        <dd>
+                                            <label class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <span class="form-check-label">SM</span>
+                                            </label>
+                                            <label class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <span class="form-check-label">MD</span>
+                                            </label>
+                                            <label class="form-check form-check-inline">
+                                                <input class="form-check-input" type="radio" name="inlineRadioOptions"
+                                                    id="inlineRadio2" value="option2">
+                                                <span class="form-check-label">XXL</span>
+                                            </label>
+                                        </dd>
+                                    </dl> <!-- item-property .// -->
+                                </div> <!-- col.// -->
+                            </div> <!-- row.// -->
+                            <hr>
+                            <a href="#" class="btn  btn-primary"> Buy now </a>
+                            <a href="#" class="btn  btn-outline-primary"> <i class="fas fa-shopping-cart"></i> Add to
+                                cart </a>
+                        </article> <!-- card-body.// -->
+                    </aside> <!-- col.// -->
+                </div> <!-- row.// -->
+            </div> <!-- card.// -->
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+        <hr class="featurette-divider">
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+              ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="resources/lib/holder/holder.min.js"></script>
+    <script src="resources/lib/jquery3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="resources/lib/popper1.14.6/popper.min.js"></script>
+    <script src="resources/lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,82 @@
+﻿@model Cliente
+@{
+    ViewData["Title"] = "CadastroCliente";
+}
+<form asp-action="CadastroCliente" asp-controller="Home" method="post">
+    <main role="main">
+
+        <section class="container" style="margin-top: 50px">
+            <div class="row">
+                <aside class="col-sm-6">
+                    <h3 class="subtitle-doc">
+                        Cadastro cliente
+                    </h3>
+                    <div id="code_register_1">
+                        <div class="card">
+                            <header class="card-header">
+                                <a asp-controller="Home" asp-action="Login" class="float-right btn btn-outline-primary mt-1">Entrar</a>
+                                <h4 class="card-title mt-2">Cadastro</h4>
+                            </header>
+                            <article class="card-body">
+                                @if (TempData["MSG_S"] != null)
+                                {
+                                    <p class="alert alert-success">@TempData["MSG_S"]</p>
+                                }
+                                <div class="form-row">
+                                    <div class="col form-group">
+                                        <label asp-for="Nome">Nome</label>
+                                        <input type="text" asp-for="Nome" class="form-control" placeholder="">
+                                        <span asp-validation-for="Nome"></span>
+                                    </div>
+                                    <div class="col form-group">
+                                        <label asp-for="Nascimento">Nascimento</label>
+                                        <input type="text" asp-for="Nascimento" class="form-control" placeholder="">
+                                        <span asp-validation-for="Nascimento"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" asp-for="Sexo" value="M">
+                                        <span class="form-check-label"> Masculino </span>
+                                    </label>
+                                    <label class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" asp-for="Sexo" value="F">
+                                        <span class="form-check-label"> Feminino</span>
+                                    </label>
+                                    <span asp-validation-for="Sexo"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="CPF">CPF</label>
+                                    <input type="text" asp-for="CPF" class="form-control" placeholder="">
+                                    <span asp-validation-for="CPF"></span>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label asp-for="Telefone">Telefone</label>
+                                        <input type="text" asp-for="Telefone" class="form-control">
+                                        <span asp-validation-for="Telefone"></span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Email">E-mail</label>
+                                    <input type="text" asp-for="Email" class="form-control" placeholder="">
+                                    <span asp-validation-for="Email"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label asp-for="Senha">Senha</label>
+                                    <input class="form-control" asp-for="Senha" type="password">
+                                    <span asp-validation-for="Senha"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="btn btn-primary btn-block"> Cadastrar </button>
+                                </div>
+
+                            </article>
+                            <div class="border-top card-body text-center">Já tem um conta? <a asp-action="Login" asp-controller="Home">Entre</a></div>
+                        </div>
+                    </div>
+                </aside>
+            </div>
+        </section>
+    </main>
+</form>

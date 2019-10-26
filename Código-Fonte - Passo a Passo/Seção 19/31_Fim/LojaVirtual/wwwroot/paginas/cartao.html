@@ -1,0 +1,253 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ASP.NET Core MVC - Loja Virtual</title>
+    <meta name="description" content="Loja Virtual em ASP.NET">
+    <meta name="author" content="Elias Ribeiro">
+    <link rel="stylesheet" href="resources/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/lib/caroussel/carousel.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/ui.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"> LojaVirtual</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list-ul"></i> Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html"><i class="far fa-address-book"></i> Contato </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+
+
+
+                    <input class="form-control mr-sm-2" type="search" placeholder="palavra" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-alt"></i> Login</a>
+                    <a class="nav-link" href="carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+        <br />
+        <br />
+        <section class="container">
+            <div class="row">
+                <aside class="col-sm-6">
+
+                    <h4 class="subtitle-doc"># Detalhes da compra
+                        <a href="#" data-html="code_payment" class="showcode">[code]</a>
+                    </h4>
+                    <div id="code_payment">
+
+                        <article class="card">
+                            <div class="card-body p-5">
+                                <p class="alert alert-success">Total: R$ 1520,11</p>
+                                <div id="code_itemside_img2">
+                                    <div class="box items-bordered-wrap">
+                                        <figure class="itemside">
+                                            <div class="aside"><img src="images/items/4.jpg" class="img-sm"></div>
+                                            <figcaption class="text-wrap align-self-center">
+                                                <h6 class="title"><a href="#">Some name of item goes here nice</a></h6>
+                                                <div class="price-wrap">
+                                                    <span class="price-new">$1280</span>
+                                                    <del class="price-old text-muted">$1980</del>
+                                                </div> <!-- price-wrap.// -->
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="itemside">
+                                            <div class="aside"><img src="images/items/5.jpg" class="img-sm"></div>
+                                            <figcaption class="text-wrap align-self-center">
+                                                <h6 class="title"><a href="#">Some name of item goes here nice</a></h6>
+                                                <div class="price-wrap">
+                                                    <span class="price-new">$1280</span>
+                                                </div> <!-- price-wrap.// -->
+                                            </figcaption>
+                                        </figure>
+                                        <figure class="itemside">
+                                            <div class="aside"><img src="images/items/6.jpg" class="img-sm"></div>
+                                            <figcaption class="text-wrap align-self-center">
+                                                <h6 class="title"><a href="#">Some name of item goes here nice</a></h6>
+                                                <div class="price-wrap">
+                                                    <span class="price-new">$1280</span>
+                                                </div> <!-- price-wrap.// -->
+                                            </figcaption>
+                                        </figure>
+                                    </div> <!-- box.// -->
+
+                                </div>
+                        </article> <!-- card.// -->
+
+                    </div> <!-- code-wrap.// -->
+
+                </aside>
+                <aside class="col-sm-6">
+
+                    <h4 class="subtitle-doc"># Pagamento
+                        <a href="#" data-html="code_payment2" class="showcode">[code]</a>
+                    </h4>
+                    <div id="code_payment2">
+
+                        <article class="card">
+                            <div class="card-body p-5">
+
+                                <ul class="nav bg radius nav-pills nav-fill mb-3" role="tablist">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" data-toggle="pill" href="#nav-tab-card">
+                                            <i class="fa fa-credit-card"></i> Credit Card</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                                            <i class="fab fa-paypal"></i> Paypal</a></li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" data-toggle="pill" href="#nav-tab-bank">
+                                            <i class="fa fa-university"></i> Bank Transfer</a></li>
+                                </ul>
+
+                                <div class="tab-content">
+                                    <div class="tab-pane fade show active" id="nav-tab-card">
+                                        <p class="alert alert-success">Some text success or error</p>
+                                        <form role="form">
+                                            <div class="form-group">
+                                                <label for="username">Full name (on the card)</label>
+                                                <input type="text" class="form-control" name="username" placeholder=""
+                                                    required="">
+                                            </div> <!-- form-group.// -->
+
+                                            <div class="form-group">
+                                                <label for="cardNumber">Card number</label>
+                                                <div class="input-group">
+                                                    <input type="text" class="form-control" name="cardNumber"
+                                                        placeholder="">
+                                                    <div class="input-group-append">
+                                                        <span class="input-group-text text-muted">
+                                                            <i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i>
+                                                            &nbsp;
+                                                            <i class="fab fa-cc-mastercard"></i>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div> <!-- form-group.// -->
+
+                                            <div class="row">
+                                                <div class="col-sm-8">
+                                                    <div class="form-group">
+                                                        <label><span class="hidden-xs">Expiration</span> </label>
+                                                        <div class="input-group">
+                                                            <input type="number" class="form-control" placeholder="MM"
+                                                                name="">
+                                                            <input type="number" class="form-control" placeholder="YY"
+                                                                name="">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <div class="form-group">
+                                                        <label data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">CVV
+                                                            <i class="fa fa-question-circle"></i></label>
+                                                        <input type="number" class="form-control" required="">
+                                                    </div> <!-- form-group.// -->
+                                                </div>
+                                            </div> <!-- row.// -->
+                                            <button class="subscribe btn btn-primary btn-block" type="button"> Confirm
+                                            </button>
+                                        </form>
+                                    </div> <!-- tab-pane.// -->
+                                    <div class="tab-pane fade" id="nav-tab-paypal">
+                                        <p>Paypal is easiest way to pay online</p>
+                                        <p>
+                                            <button type="button" class="btn btn-primary"> <i class="fab fa-paypal"></i>
+                                                Log in my Paypal </button>
+                                        </p>
+                                        <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    </div>
+                                    <div class="tab-pane fade" id="nav-tab-bank">
+                                        <p>Bank accaunt details</p>
+                                        <dl class="param">
+                                            <dt>BANK: </dt>
+                                            <dd> THE WORLD BANK</dd>
+                                        </dl>
+                                        <dl class="param">
+                                            <dt>Accaunt number: </dt>
+                                            <dd> 12345678912345</dd>
+                                        </dl>
+                                        <dl class="param">
+                                            <dt>IBAN: </dt>
+                                            <dd> 123456789</dd>
+                                        </dl>
+                                        <p><strong>Note:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing
+                                            elit, sed do eiusmod
+                                            tempor incididunt ut labore et dolore magna aliqua. </p>
+                                    </div> <!-- tab-pane.// -->
+                                </div> <!-- tab-content .// -->
+
+                            </div> <!-- card-body.// -->
+                        </article> <!-- card.// -->
+
+                    </div> <!-- code-wrap.// -->
+
+                </aside> <!-- col.// -->
+            </div>
+        </section>
+
+
+
+
+
+
+        <hr class="featurette-divider">
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+              ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="resources/lib/holder/holder.min.js"></script>
+    <script src="resources/lib/jquery3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="resources/lib/popper1.14.6/popper.min.js"></script>
+    <script src="resources/lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

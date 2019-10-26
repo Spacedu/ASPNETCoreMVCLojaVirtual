@@ -1,0 +1,69 @@
+﻿@model X.PagedList.IPagedList<LojaVirtual.Models.Cliente>
+@{
+    ViewData["Title"] = "Index";
+    var pesquisa = Context.Request.Query["pesquisa"];
+}
+
+<h1>Cliente</h1>
+
+<br />
+<br />
+<!--
+    Formulário
+    -- QueryString: Colaborador/Cliente/Index?pesquisa={palavraDigitada}&pagina=3
+-->
+<form method="get">
+    <div class="form-group">
+        <label for="pesquisa"></label>
+        <input type="text" name="pesquisa" id="pesquisa" value="@pesquisa" class="form-control" placeholder="Digite o nome ou e-mail do cliente">
+    </div>
+    <button type="submit" class="btn btn-primary">OK</button>
+</form>
+<br />
+<br />
+
+@{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+@if (Model.Count > 0)
+{
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Nome)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Email)</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Cliente cliente in Model)
+                {
+                    <tr>
+                        <th scope="row">@cliente.Id</th>
+                        <td>@cliente.Nome</td>
+                        <td>@cliente.Email</td>
+                        <td>
+                            @if (cliente.Situacao == "A")
+                            {
+                                <a asp-action="AtivarDesativar" asp-route-id="@cliente.Id" class="btn btn-danger">Desativar</a>
+                            }
+                            else
+                            {
+                                <a asp-action="AtivarDesativar" asp-route-id="@cliente.Id" class="btn btn-secondary">Ativar</a>
+                            }
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @Html.PagedListPager((IPagedList)Model, pagina => Url.Action("Index", new { pagina = pagina, pesquisa = pesquisa }))
+
+}
+else
+{
+    <span>Nenhum registro cadastrado!</span>
+}

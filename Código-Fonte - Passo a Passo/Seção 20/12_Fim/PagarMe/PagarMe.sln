@@ -1,0 +1,74 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28729.10
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PagarMe.Shared", "PagarMe.Shared\PagarMe.Shared.shproj", "{A1E35F76-C32B-4490-BB52-282A27E0A37D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{D2D45E69-D326-4650-84BF-F9C08AD4AFD4}"
+	ProjectSection(SolutionItems) = preProject
+		PagarMe.nuspec = PagarMe.nuspec
+		PagarMe.Pcl.nuspec = PagarMe.Pcl.nuspec
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PagarMeCore", "PagarMeCore\PagarMeCore.csproj", "{81F79DAA-80B7-4119-868D-06BBDF1C29B2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PagarMeCore.Tests", "PagarMeCore.Tests\PagarMeCore.Tests.csproj", "{4D4F819F-9DE6-4C4A-A7EF-84EEABCFD8E3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PlaygroundCore", "PlaygroundCore\PlaygroundCore.csproj", "{877824ED-1326-4ED2-8E85-5C15B149BE76}"
+EndProject
+Global
+	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		PagarMe.Shared\PagarMe.Shared.projitems*{a1e35f76-c32b-4490-bb52-282a27e0a37d}*SharedItemsImports = 13
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{81F79DAA-80B7-4119-868D-06BBDF1C29B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{81F79DAA-80B7-4119-868D-06BBDF1C29B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{81F79DAA-80B7-4119-868D-06BBDF1C29B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{81F79DAA-80B7-4119-868D-06BBDF1C29B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4D4F819F-9DE6-4C4A-A7EF-84EEABCFD8E3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4D4F819F-9DE6-4C4A-A7EF-84EEABCFD8E3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4D4F819F-9DE6-4C4A-A7EF-84EEABCFD8E3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4D4F819F-9DE6-4C4A-A7EF-84EEABCFD8E3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{877824ED-1326-4ED2-8E85-5C15B149BE76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{877824ED-1326-4ED2-8E85-5C15B149BE76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{877824ED-1326-4ED2-8E85-5C15B149BE76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{877824ED-1326-4ED2-8E85-5C15B149BE76}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D2F74ECD-BCE7-42D6-9185-AD2D3DD21040}
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		Policies = $0
+		$0.DotNetNamingPolicy = $1
+		$1.DirectoryNamespaceAssociation = Hierarchical
+		$0.VersionControlPolicy = $2
+		$0.TextStylePolicy = $11
+		$3.scope = text/plain
+		$0.CSharpFormattingPolicy = $4
+		$4.scope = text/x-csharp
+		$0.StandardHeader = $5
+		$0.NameConventionPolicy = $6
+		$6.Rules = $7
+		$7.NamingRule = $8
+		$8.Name = Type Parameters
+		$8.AffectedEntity = TypeParameter
+		$8.VisibilityMask = VisibilityMask
+		$8.NamingStyle = PascalCase
+		$8.IncludeInstanceMembers = True
+		$8.IncludeStaticEntities = True
+		$8.RequiredPrefixes = $9
+		$9.String = T
+		$8.RequiredSuffixes = $10
+		$10.String = Exception
+		$11.TabsToSpaces = True
+		$11.scope = text/x-csharp
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,20 @@
+﻿@model LojaVirtual.Models.Produto
+
+<h3>Produto -> Visualizar</h3>
+:)
+
+Razor:
+@{
+    string nome = "Elias Ribeiro";
+}
+<h3>@nome</h3>
+<br />
+<h2>Produto</h2>
+<b>Código:</b> @Model.Id <br />
+<b>Nome:</b> @Model.Nome <br />
+<b>Descrição:</b> @Model.Descricao <br />
+<b>Valor:</b> @Model.Valor.ToString("C") <br />
+
+
+<br />
+Todos os direitos reservados &copy; @DateTime.Now.Year

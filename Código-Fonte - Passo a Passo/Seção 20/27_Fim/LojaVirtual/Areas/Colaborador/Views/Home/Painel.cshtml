@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewData["Title"] = "Painel";
+}
+
+<h1>Painel</h1>
+
+<h3>Gerais</h3>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Clientes</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: @ViewBag.Clientes</h5>                
+                <a asp-controller="Cliente" asp-action="Index" class="btn btn-primary">Visualizar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Newsletter</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: @ViewBag.Newsletter</h5>
+                <a href="#" class="btn btn-primary">Gerar arquivo</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">Produtos</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: @ViewBag.Produto</h5>                
+                <a asp-controller="Produto" asp-action="Index" class="btn btn-primary">Gerenciar</a>
+            </div>
+        </div>
+    </div>
+</div>
+<h3>Vendas</h3>
+<div class="row">
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">NÚMERO</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: @ViewBag.NumeroPedidos</h5>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">TOTAL VENDIDO</h5>
+            <div class="card-body">
+                <h5 class="card-title">TOTAL: @ViewBag.ValorTotalPedidos</h5>                
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card">
+            <h5 class="card-header">FORMA DE PAGAMENTO</h5>
+            <div class="card-body">
+                <h5 class="card-title"><strong>Boleto: </strong>@ViewBag.QuantidadeBoletoBancario - <strong>Cartão de Crédito:</strong> @ViewBag.QuantidadeCartaoCredito</h5>                
+            </div>
+        </div>
+    </div>
+</div>

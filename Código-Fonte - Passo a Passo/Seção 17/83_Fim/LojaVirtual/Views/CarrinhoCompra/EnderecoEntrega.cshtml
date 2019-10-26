@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewData["Title"] = "EnderecoEntrega";
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            <!--
+        Listar os endereços
+        - TODO - Apresentar o endereço do usuário (Session)
+        - TODO - Listar endereços vinculados ao usuário; (Database)
+    -->
+            <table class="table">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input type="radio" name="endereco" value="0" />
+                        </th>
+                        <td>
+                            <strong>Nome: </strong> Endereço do cliente.
+                            <p>
+                                @ViewBag.Cliente.CEP | @ViewBag.Cliente.Estado, @ViewBag.Cliente.Cidade, @ViewBag.Cliente.Bairro, @ViewBag.Cliente.Endereco, @ViewBag.Cliente.Complemento, @ViewBag.Cliente.Numero
+                            </p>
+                        </td>
+                        <td>
+                            <strong>Frete: </strong>
+                            <p>
+                                R$ 120,00
+                            </p>
+                        </td>
+                    </tr>
+
+                    @foreach (EnderecoEntrega endereco in ViewBag.Enderecos)
+                    {
+                        <tr>
+                            <th scope="row">
+                                <input type="radio" name="endereco" value="0" />
+                            </th>
+                            <td>
+                                <strong>Nome: </strong> @endereco.Nome
+                                <p>
+                                    @endereco.CEP | @endereco.Estado, @endereco.Cidade, @endereco.Bairro, @endereco.Endereco, @endereco.Complemento, @endereco.Numero
+                                </p>
+                            </td>
+                            <td>
+                                <strong>Frete: </strong>
+                                <p>
+                                    R$ 130,00
+                                </p>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+            <div class="text-center">
+                <a asp-action="CadastroEnderecoEntrega" asp-controller="Home" asp-area="Cliente" asp-route-returnUrl="@Url.Action("EnderecoEntrega", "CarrinhoCompra", new { area = ""})" class="btn btn-outline-primary">Cadastrar novo endereço</a>
+            </div>
+            <a asp-action="Index" asp-controller="Pagamento" class="btn btn-primary">Continuar</a>
+        </div>
+
+    </div>
+</div>
+

@@ -1,0 +1,13 @@
+﻿body {
+}
+.field-validation-error {
+    color: red;
+    display: block;
+}
+
+.Imagens .btn-imagem-excluir {
+    width: 100% !important;
+}
+.Imagens div {
+    text-align: center;
+}

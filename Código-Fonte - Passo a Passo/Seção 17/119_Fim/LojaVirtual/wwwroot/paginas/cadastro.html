@@ -1,0 +1,169 @@
+<!doctype html>
+
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>ASP.NET Core MVC - Loja Virtual</title>
+    <meta name="description" content="Loja Virtual em ASP.NET">
+    <meta name="author" content="Elias Ribeiro">
+    <link rel="stylesheet" href="resources/lib/bootstrap-4.2.1-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="resources/lib/caroussel/carousel.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/ui.css" />
+    <link rel="stylesheet" href="resources/lib/bootstrap-ecommerce-uikit/css/responsive.css" rel="stylesheet" media="only screen and (max-width: 1200px)" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+            <a class="navbar-brand" href="#"> LojaVirtual</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home <span class="sr-only">(current)</span></a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">
+                            <i class="fas fa-list-ul"></i> Categorias
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <a class="dropdown-item" href="#">Action</a>
+                            <a class="dropdown-item" href="#">Another action</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="#">Something else here</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contato.html"><i class="far fa-address-book"></i> Contato </a>
+                    </li>
+                </ul>
+                <form class="form-inline my-2 my-lg-0">
+
+
+
+                    <input class="form-control mr-sm-2" type="search" placeholder="palavra" aria-label="Search">
+                    <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisa</button>
+                    <a class="nav-link" href="login.html"><i class="fas fa-user-alt"></i> Login</a>
+                    <a class="nav-link active" href="carrinho.html"><i class="fas fa-shopping-cart"></i> Carrinho</a>
+                </form>
+            </div>
+        </nav>
+    </header>
+
+    <main role="main">
+
+        <section class="container" style="margin-top: 50px">
+            <div class="row">
+                <aside class="col-sm-6">
+                    <h3 class="subtitle-doc"># Register simple
+                        <a href="#" data-html="code_register_1" class="showcode">[code]</a>
+                    </h3>
+                    <div id="code_register_1">
+                        <div class="card">
+                            <header class="card-header">
+                                <a href="" class="float-right btn btn-outline-primary mt-1">Log in</a>
+                                <h4 class="card-title mt-2">Sign up</h4>
+                            </header>
+                            <article class="card-body">
+                                <form>
+                                    <div class="form-row">
+                                        <div class="col form-group">
+                                            <label>First name</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div> <!-- form-group end.// -->
+                                        <div class="col form-group">
+                                            <label>Last name</label>
+                                            <input type="text" class="form-control" placeholder="">
+                                        </div> <!-- form-group end.// -->
+                                    </div> <!-- form-row end.// -->
+                                    <div class="form-group">
+                                        <label>Email address</label>
+                                        <input type="email" class="form-control" placeholder="">
+                                        <small class="form-text text-muted">We'll never share your email with anyone
+                                            else.</small>
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group">
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="option1">
+                                            <span class="form-check-label"> Male </span>
+                                        </label>
+                                        <label class="form-check form-check-inline">
+                                            <input class="form-check-input" type="radio" name="gender" value="option2">
+                                            <span class="form-check-label"> Female</span>
+                                        </label>
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-row">
+                                        <div class="form-group col-md-6">
+                                            <label>City</label>
+                                            <input type="text" class="form-control">
+                                        </div> <!-- form-group end.// -->
+                                        <div class="form-group col-md-6">
+                                            <label>Country</label>
+                                            <select id="inputState" class="form-control">
+                                                <option> Choose...</option>
+                                                <option>Uzbekistan</option>
+                                                <option>Russia</option>
+                                                <option selected="">United States</option>
+                                                <option>India</option>
+                                                <option>Afganistan</option>
+                                            </select>
+                                        </div> <!-- form-group end.// -->
+                                    </div> <!-- form-row.// -->
+                                    <div class="form-group">
+                                        <label>Create password</label>
+                                        <input class="form-control" type="password">
+                                    </div> <!-- form-group end.// -->
+                                    <div class="form-group">
+                                        <button type="submit" class="btn btn-primary btn-block"> Register </button>
+                                    </div> <!-- form-group// -->
+                                    <small class="text-muted">By clicking the 'Sign Up' button, you confirm that you
+                                        accept our <br> Terms of use and Privacy Policy.</small>
+                                </form>
+                            </article> <!-- card-body end .// -->
+                            <div class="border-top card-body text-center">Have an account? <a href="">Log In</a></div>
+                        </div> <!-- card.// -->
+
+                    </div> <!-- code-wrap.// -->
+                </aside>
+            </div>
+        </section>
+
+
+
+
+
+
+
+        <hr class="featurette-divider">
+
+        <!-- FOOTER -->
+        <footer class="container">
+            <p class="float-right"><a href="#">Back to top</a></p>
+            <p>&copy; 2017-2018 Company, Inc. &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
+        </footer>
+    </main>
+
+    <!-- Bootstrap core JavaScript
+              ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+
+    <!-- Just to make our placeholder images work. Don't actually copy the next line! -->
+    <script src="resources/lib/holder/holder.min.js"></script>
+    <script src="resources/lib/jquery3.3.1/jquery-3.3.1.min.js"></script>
+    <script src="resources/lib/popper1.14.6/popper.min.js"></script>
+    <script src="resources/lib/bootstrap-4.2.1-dist/js/bootstrap.min.js"></script>
+</body>
+
+</html>

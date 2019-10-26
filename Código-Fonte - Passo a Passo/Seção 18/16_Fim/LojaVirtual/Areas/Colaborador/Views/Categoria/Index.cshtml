@@ -1,0 +1,66 @@
+﻿@model X.PagedList.IPagedList<LojaVirtual.Models.Categoria>
+@{
+    ViewData["Title"] = "Index";
+}
+@{
+    /*
+        @if (categoria.CategoriaPai != null)
+        {
+            <span>@categoria.CategoriaPai.Id - @categoria.CategoriaPai.Nome</span>
+        }
+        else
+        {
+            <span>--</span>
+        }
+    */
+}
+
+<h1>Categoria</h1>
+
+<a asp-action="Cadastrar" class="btn btn-primary">Cadastrar</a>
+<br />
+<br />
+
+@{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+@if (Model.Count > 0)
+{
+
+    <div class="table-responsive">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Id)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().Nome)</th>
+                    <th scope="col">@Html.DisplayNameFor(model => model.First().CategoriaPaiId)</th>
+                    <th scope="col">Ações</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (Categoria categoria in Model)
+                {
+                    <tr>
+                        <th scope="row">@categoria.Id</th>
+                        <td>@categoria.Nome</td>
+                        <td>
+                            @Html.DisplayFor(model => categoria.CategoriaPai.Id)
+                            -
+                            @Html.DisplayFor(model => categoria.CategoriaPai.Nome)
+                        </td>
+                        <td>
+                            <a asp-action="Atualizar" asp-route-id="@categoria.Id" class="btn btn-secondary">Atualizar</a>
+                            <a asp-action="Excluir" asp-route-id="@categoria.Id" class="btn btn-danger">Excluir</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    @Html.PagedListPager((IPagedList)Model, pagina => Url.Action("Index", new { pagina }))
+
+}
+else
+{
+    <span>Nenhum registro cadastrado!</span>
+}

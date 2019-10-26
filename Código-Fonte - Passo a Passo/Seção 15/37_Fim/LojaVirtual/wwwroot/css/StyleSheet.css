@@ -1,0 +1,32 @@
+﻿body {
+}
+.field-validation-error {
+    color: red;
+    display: block;
+}
+.Imagens .col-md-2 {
+    margin-bottom: 30px;
+}
+.Imagens .btn-imagem-excluir {
+    width: 100% !important;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+}
+.Imagens .btn-ocultar {
+    display: none;
+}
+.Imagens div {
+    text-align: center;
+}
+.Imagens .img-thumbnail {
+    width: 100%;
+}
+.Imagens .input-file {
+    display: none;
+}
+.Imagens .img-upload {
+    cursor: pointer !important;
+}
+.Imagens input[name=imagem] {
+    display: none;
+}

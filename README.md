@@ -1,18 +1,17 @@
 # ASP.NET Core MVC Loja Virtual
 Este é o código-fonte do curso __ASP.NET Core 2.2 - Aprenda construindo uma Loja Virtual__. O código-fonte aqui presente serve para ensinar algumas estruturas base do ASP.NET Core MVC. Este projeto tem o objetivo de ensinar ASP.NET Core MVC focando nas APIs internas, como o projeto se trata de uma loja virtual, também é utilizado algumas bibliotecas de terceiros e os padrões de projetos mais populares. Abaixo listo os recursos utilizados:
 
-__Assuntos tratados no curso__
-
-Quais recursos e tecnologias você irá aprender:
-
-· HTTP/HTTPS e todo o ecossistema de funcionamento da internet para que os sites funcionem.
-
 __Pasta e seus destinos:__
 
 ·· "Código-Fonte - Passo a Passo" - Use para consultar via Github (Browser) o código-fonte.
 
 ·· "Código-Fonte - Compactado" - Use para baixar o código-fonte da última aula de cada seção.
 
+__Assuntos tratados no curso__
+
+Quais recursos e tecnologias você irá aprender:
+
+· HTTP/HTTPS e todo o ecossistema de funcionamento da internet para que os sites funcionem.
 
 __· ASP.NET Core MVC:__
 

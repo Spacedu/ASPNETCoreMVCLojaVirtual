@@ -1,0 +1,153 @@
+﻿@model LojaVirtual.Models.ViewModels.Pagamento.IndexViewModel
+@{
+    ViewData["Title"] = "Index";
+    decimal Subtotal = 0;
+    var produtos = (List<ProdutoItem>)ViewBag.Produtos;
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-6">
+            <div id="code_itemside_img2">
+                <div class="box items-bordered-wrap">
+                    @foreach (var item in produtos)
+                    {
+                        <figure class="itemside">
+                            <div class="aside">
+                                @if (item.Imagens.Count > 0)
+                                {
+
+                                    <img src="@(((List<Imagem>)item.Imagens).First().Caminho)" class="img-sm">
+                                }
+                                else
+                                {
+                                    <img src="~/img/imagem-produto.png" class="img-sm">
+                                }
+                            </div>
+                            <figcaption class="text-wrap align-self-center">
+                                @{
+                                    var ResultadoSubtotalItem = item.Valor * item.UnidadesPedidas;
+                                    Subtotal = Subtotal + ResultadoSubtotalItem;
+                                }
+
+                                <h6 class="title"><strong>@item.Nome.ToUpper()</strong></h6>
+                                <div class="price-wrap">
+                                    <span class="price-new">@item.Valor.ToString("C") x @item.UnidadesPedidas = <strong>@ResultadoSubtotalItem.ToString("C")</strong></span>
+                                </div>
+                            </figcaption>
+                        </figure>
+                    }
+                </div>
+                <div class="box">
+                    <h4 class="subtitle-doc">
+                        Resumo
+                    </h4>
+                    <dl class="dlist-align">
+                        <dt>Subtotal: </dt>
+                        <dd class="text-right subtotal">@Subtotal.ToString("C")</dd>
+                    </dl>
+                    <dl class="dlist-align">
+                        <dt>Frete:</dt>
+                        <dd class="text-right frete">@ViewBag.Frete.TipoFrete - @ViewBag.Frete.Valor.ToString("C")</dd>
+                    </dl>
+                    <dl class="dlist-align">
+                        <dt>TOTAL:</dt>
+                        @{ 
+                            decimal valorFrete = (decimal)ViewBag.Frete.Valor;
+                        }
+                        <dd class="text-right total">@( (Subtotal + valorFrete).ToString("C")  )</dd>
+                    </dl>
+                </div>
+            </div>
+            </div>
+        <div class="col-md-6">
+            @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+            <div id="code_payment2">
+
+                <article class="card">
+                    <div class="card-body p-5">
+
+                        <ul class="nav bg radius nav-pills nav-fill mb-3" role="tablist">
+                            <li class="nav-item">
+                                <a class="nav-link active show" data-toggle="pill" href="#nav-tab-card">
+                                    <i class="fa fa-credit-card"></i> Cartão de Crédito
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" data-toggle="pill" href="#nav-tab-paypal">
+                                    <i class="fa fa-barcode"></i>  Boleto Bancário
+                                </a>
+                            </li>
+                        </ul>
+
+                        <div class="tab-content">
+                            <div class="tab-pane fade active show" id="nav-tab-card">
+                                <form role="form" method="post">
+                                    <div class="form-group">
+                                        <label asp-for="CartaoCredito.NomeNoCartao"></label>
+                                        <input type="text" asp-for="CartaoCredito.NomeNoCartao" class="form-control" placeholder="">
+                                        <span asp-validation-for="CartaoCredito.NomeNoCartao"></span>
+                                    </div>
+                                    <div class="form-group">
+                                        <label asp-for="CartaoCredito.NumeroCartao"></label>
+
+                                        <div class="input-group">
+                                            <input type="text" asp-for="CartaoCredito.NumeroCartao" class="form-control" placeholder="">
+                                            <div class="input-group-append">
+                                                <span class="input-group-text text-muted">
+                                                    <i class="fab fa-cc-visa"></i> &nbsp; <i class="fab fa-cc-amex"></i> &nbsp;
+                                                    <i class="fab fa-cc-mastercard"></i>
+                                                </span>
+                                            </div>
+                                        </div>
+                                        <span asp-validation-for="CartaoCredito.NumeroCartao"></span>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-sm-8">
+                                            <div class="form-group">
+                                                <label for="VecimentoMM" class="hidden-xs">Vecimento</label>
+                                                <div class="input-group">
+                                                    <input type="number" class="form-control" placeholder="MM" asp-for="CartaoCredito.VecimentoMM">
+                                                    <input type="number" class="form-control" placeholder="YY" asp-for="CartaoCredito.VecimentoYY">
+                                                </div>
+                                                <span asp-validation-for="CartaoCredito.VecimentoMM"></span>
+                                                <span asp-validation-for="CartaoCredito.VecimentoYY"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label asp-for="CartaoCredito.CodigoSeguranca" data-toggle="tooltip" title="" data-original-title="3 digits code on back side of the card">Cód. segurança <i class="fa fa-question-circle"></i></label>
+                                                <input type="number" class="form-control" asp-for="CartaoCredito.CodigoSeguranca">
+                                                <span asp-validation-for="CartaoCredito.CodigoSeguranca"></span>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4">
+                                            <div class="form-group">
+                                                <label asp-for="Parcelamento" data-toggle="tooltip" title="">Parcelamento <i class="fa fa-question-circle"></i></label>
+                                                <select class="form-control" asp-for="Parcelamento.Numero" asp-items="ViewBag.Parcelamentos"></select>
+                                                <span asp-validation-for="Parcelamento"></span>
+                                            </div>
+                                        </div>                                        
+                                    </div>
+                                    <button class="subscribe btn btn-primary btn-block" type="submit"> Confirmar  </button>
+                                </form>
+                            </div>
+                            <div class="tab-pane fade" id="nav-tab-paypal">
+                                <p>Clique no botão para visualizar o boleto bancário.</p>
+                                <p class="text-center">
+                                    <a class="btn btn-outline-primary btn-lg" asp-action="BoletoBancario"> <i class="fa fa-barcode"></i> Continuar </a>
+                                </p>
+                            </div>
+                            
+                        </div> 
+
+                    </div> 
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+

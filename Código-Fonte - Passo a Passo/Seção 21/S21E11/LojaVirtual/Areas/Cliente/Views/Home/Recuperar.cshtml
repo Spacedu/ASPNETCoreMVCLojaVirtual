@@ -1,0 +1,35 @@
+﻿@model LojaVirtual.Models.Cliente
+@{
+    ViewData["Title"] = "Recuperar senha";
+}
+<main role="main">
+    <br />
+    <br />
+    <section class="container">
+        <aside class="col-sm-4">
+            <h3 class="subtitle-doc">
+                Recuperar senha
+            </h3>
+            <div id="code_login_1">
+                <div class="card">
+                    <article class="card-body">
+                        @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+                        <a asp-action="Login" asp-controller="Home" class="float-right btn btn-outline-primary">Voltar ao Login</a>
+                        <h4 class="card-title mb-4 mt-1">Recuperar senha</h4>
+                        <form method="post">
+                            <div class="form-group">
+                                <label>E-mail</label>
+                                <input asp-for="Email" class="form-control" placeholder="Email" type="email">
+                                <span asp-validation-for="Email"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Recuperar </button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>

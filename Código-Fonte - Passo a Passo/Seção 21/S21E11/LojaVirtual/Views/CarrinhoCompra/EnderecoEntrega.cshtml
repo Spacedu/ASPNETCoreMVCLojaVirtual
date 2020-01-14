@@ -1,0 +1,136 @@
+﻿
+@{
+    ViewData["Title"] = "EnderecoEntrega";
+
+    var produtos = (List<ProdutoItem>)ViewBag.Produtos;
+    decimal total = 0;
+
+    foreach (ProdutoItem produto in produtos)
+    {
+        decimal resultado = produto.Valor * produto.UnidadesPedidas;
+        total += resultado;
+    }
+}
+
+<div class="container">
+    <br />
+    <br />
+    <div class="row">
+        <div class="col-md-12">
+            @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+            <table class="table table-hover">
+                <tbody>
+                    <tr>
+                        <th scope="row">
+                            <input type="radio" name="endereco" value="0" id="0-end" />
+                            <input type="hidden" name="cep" value="@ViewBag.Cliente.CEP" />
+                        </th>
+                        <td>
+                            <label for="0-end">
+                                <strong>Nome: </strong> Endereço do cliente.
+                                <p>
+                                    @ViewBag.Cliente.CEP | @ViewBag.Cliente.Estado, @ViewBag.Cliente.Cidade, @ViewBag.Cliente.Bairro, @ViewBag.Cliente.Endereco, @ViewBag.Cliente.Complemento, @ViewBag.Cliente.Numero
+                                </p>
+                            </label>
+                        </td>
+                    </tr>
+
+                    @foreach (EnderecoEntrega endereco in ViewBag.Enderecos)
+                    {
+                        <tr>
+                            <th scope="row">
+                                <input type="radio" name="endereco" value="@endereco.Id" id="@endereco.Id-end" />
+                                <input type="hidden" name="cep" value="@endereco.CEP" />
+                            </th>
+                            <td>
+                                <label for="@endereco.Id-end">
+                                    <strong>Nome: </strong> @endereco.Nome
+                                    <p>
+                                        @endereco.CEP | @endereco.Estado, @endereco.Cidade, @endereco.Bairro, @endereco.Endereco, @endereco.Complemento, @endereco.Numero
+                                    </p>
+                                </label>
+                            </td>
+                        </tr>
+                    }
+
+
+                </tbody>
+            </table>
+
+
+
+            <div class="text-center">
+                <a asp-action="Cadastrar" asp-controller="EnderecoEntrega" asp-area="Cliente" asp-route-returnUrl="@Url.Action("EnderecoEntrega", "CarrinhoCompra", new { area = ""})" class="btn btn-outline-primary">Cadastrar novo endereço</a>
+            </div>
+
+            <br />
+            <div class="card-group">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">-</h5>
+                        <p class="card-text">-</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            -
+                        </small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">-</h5>
+                        <p class="card-text">-</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            -
+                        </small>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">-</h5>
+                        <p class="card-text">-</p>
+                    </div>
+                    <div class="card-footer">
+                        <small class="text-muted">
+                            -
+                        </small>
+                    </div>
+                </div>
+            </div>
+            <br />
+            <div class="card-group">
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Produtos</h5>
+                        <p class="card-text texto-produto">@total.ToString("C")</p>
+
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Frete</h5>
+                        <p class="card-text texto-frete">-</p>
+                    </div>
+                </div>
+                <div class="card">
+
+                    <div class="card-body">
+                        <h5 class="card-title">Total</h5>
+                        <p class="card-text texto-total">-</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <br />
+            <a asp-action="Index" asp-controller="Pagamento" class="btn btn-primary btn-continuar disabled">Continuar</a>
+        </div>
+
+    </div>
+</div>
+

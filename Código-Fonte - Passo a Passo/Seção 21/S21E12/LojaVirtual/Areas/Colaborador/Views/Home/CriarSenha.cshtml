@@ -1,0 +1,40 @@
+﻿@model LojaVirtual.Models.Colaborador
+@{
+    ViewData["Title"] = "Criar nova senha";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<main role="main">
+    <br />
+    <br />
+    <section class="container">
+        <aside class="col-sm-4">
+            <h3 class="subtitle-doc">
+                Criar nova senha
+            </h3>
+            <div id="code_login_1">
+                <div class="card">
+                    <article class="card-body">
+                        @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+                        <a asp-action="Login" asp-controller="Home" class="float-right btn btn-outline-primary">Login</a>
+                        <h4 class="card-title mb-4 mt-1">Alterar Senha</h4>
+                        <form method="post">
+                            <div class="form-group">
+                                <label>Senha</label>
+                                <input asp-for="Senha" class="form-control" placeholder="******" type="password">
+                                <span asp-validation-for="Senha"></span>
+                            </div>
+                            <div class="form-group">
+                                <label>Confirmar senha</label>
+                                <input asp-for="ConfirmacaoSenha" class="form-control" placeholder="******" type="password">
+                                <span asp-validation-for="ConfirmacaoSenha"></span>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary btn-block"> Salvar </button>
+                            </div>
+                        </form>
+                    </article>
+                </div>
+            </div>
+        </aside>
+    </section>
+</main>

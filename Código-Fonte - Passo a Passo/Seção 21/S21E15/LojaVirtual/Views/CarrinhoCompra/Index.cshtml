@@ -1,0 +1,178 @@
+﻿@model List<LojaVirtual.Models.ProdutoAgregador.ProdutoItem>
+@inject LojaVirtual.Libraries.Login.LoginCliente _loginCliente
+@{
+    ViewData["Title"] = "Index";
+    decimal Subtotal = 0;
+}
+
+
+@if (Model.Count > 0)
+{
+    <div class="container">
+        <section id="order">
+            <br />
+            <br />
+            <h2 class="title-doc">Carrinho de compras</h2>
+            <div class="alert alert-danger" style="display: none;" role="alert">
+
+            </div>
+            @{ await Html.RenderPartialAsync("~/Views/Shared/_Mensagem.cshtml"); }
+
+
+            <div id="code_cart">
+                <div class="card">
+                    <table class="table table-hover shopping-cart-wrap">
+                        <thead class="text-muted">
+                            <tr>
+                                <th scope="col">Produto</th>
+                                <th scope="col" width="120">Quantidade</th>
+                                <th scope="col" width="120">Preço</th>
+                                <th scope="col" width="200" class="text-right">Ação</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model)
+                            {
+                                <tr>
+                                    <td>
+                                        <figure class="media">
+                                            <div class="img-wrap">
+                                                @if (item.Imagens.Count > 0)
+                                                {
+                                                    <img src="@item.Imagens.First().Caminho" class="img-thumbnail img-sm">
+                                                }
+                                                else
+                                                {
+                                                    <img src="~/img/imagem-produto.png" class="img-thumbnail img-sm">
+                                                }
+                                            </div>
+                                            <figcaption class="media-body">
+                                                <h6 class="title text-truncate">@item.Nome</h6>
+                                                <dl class="dlist-inline small">
+                                                    <dt>Descrição: </dt>
+                                                    <dd>@item.Descricao</dd>
+                                                </dl>
+                                            </figcaption>
+                                        </figure>
+                                    </td>
+                                    <td>
+                                        <div class="col-auto">
+                                            <div class="input-group mb-2 control-inline">
+                                                <input type="hidden" class="inputProdutoId" value="@item.Id" />
+                                                <input type="hidden" class="inputQuantidadeEstoque" value="@item.Estoque" />
+                                                <input type="hidden" class="inputValorUnitario" value="@item.Valor" />
+                                                <div class="input-group-prepend">
+                                                    <a href="#" class="btn btn-primary diminuir"> - </a>
+                                                </div>
+                                                <input type="text" style="width: 60px; text-align: center" readonly="readonly" class="form-control inputQuantidadeProdutoCarrinho" value="@item.UnidadesPedidas">
+                                                <div class="input-group-append">
+                                                    <a href="#" class="btn btn-primary aumentar"> + </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </td>
+                                    @{
+                                        var ResultadoSubtotalItem = item.Valor * item.UnidadesPedidas;
+                                        Subtotal = Subtotal + ResultadoSubtotalItem;
+                                    }
+                                    <td>
+                                        <div class="price-wrap">
+                                            <var class="price">@(ResultadoSubtotalItem.ToString("C"))</var>
+                                            <small class="text-muted">(@item.Valor.ToString("C") cada)</small>
+                                            <br />
+                                            <small class="text-muted"><strong>Estoque:</strong> @item.Estoque</small>
+                                        </div>
+                                    </td>
+                                    <td class="text-right">
+                                        <a asp-controller="CarrinhoCompra" asp-action="RemoverItem" asp-route-id="@item.Id" class="btn btn-outline-danger"> × Remove</a>
+                                    </td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </section>
+        <br />
+        <br />
+        <section id="parameters">
+            <div class="row">
+                <aside class="col-md-4">
+
+                    <div id="code_desc_align">
+                        <div class="box">
+                            <h4 class="subtitle-doc">
+                                Frete
+                            </h4>
+                            <dl class="dlist-align">
+                                <dt>CEP: </dt>
+                                <dd>
+                                    <div class="input-group">
+                                        <input type="text" name="cep" class="form-control cep" />
+                                        <div class="input-group-append">
+                                            <a href="#" class="btn btn-outline-primary btn-calcular-frete">OK</a>
+                                        </div>
+                                    </div>
+                                </dd>
+                            </dl>
+                            <div class="container-frete"></div>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="col-md-4">
+
+                    <div id="code_desc_right">
+                        <div class="box">
+                            <h4 class="subtitle-doc">
+                                Resumo
+                            </h4>
+                            <dl class="dlist-align">
+                                <dt>Subtotal: </dt>
+                                <dd class="text-right subtotal">@Subtotal.ToString("C")</dd>
+                            </dl>
+                            <dl class="dlist-align">
+                                <dt>Frete:</dt>
+                                <dd class="text-right frete">R$ 0,00</dd>
+                            </dl>
+                            <dl class="dlist-align">
+                                <dt>TOTAL:</dt>
+                                <dd class="text-right total">R$ 0,00</dd>
+                            </dl>
+                        </div>
+                    </div>
+                </aside>
+                <aside class="col-md-4">
+                    <div class="box">
+                        @if (_loginCliente.GetCliente() == null)
+                        {
+                            <a asp-action="Login" asp-controller="Home" asp-area="Cliente" asp-route-returnUrl="@Url.Action("VerificarEstoque", "CarrinhoCompra", new { area = "" })" class="btn btn-primary btn-continuar disabled">Continuar</a>
+                        } else {
+                            <a asp-action="VerificarEstoque" asp-controller="CarrinhoCompra" class="btn btn-primary btn-continuar disabled">Continuar</a>
+                        }
+                    </div>
+                </aside>
+            </div>
+
+        </section>
+
+    </div>
+}
+else
+{
+    <div class="container">
+        <br />
+        <br />
+        <div class="row">
+            <div class="col-md-12">
+                Ainda não adicionou um produto ao seu carrinho? <a asp-controller="Home" asp-action="Index">Clique aqui</a> e começe a comprar
+            </div>
+            <br />
+            <br />
+            <div class="offset-md-4 col-md-4">
+                <a class="btn btn-outline-primary btn-continuar-comprando" asp-action="Index" asp-controller="Home">
+                    Vamos as compras
+                </a>
+            </div>
+        </div>
+    </div>
+}

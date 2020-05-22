@@ -123,7 +123,6 @@ namespace LojaVirtual
             services.AddSession(options =>
             {
                 options.Cookie.IsEssential = true;
-                options.Cookie.Expiration = new TimeSpan(DateTime.Now.Day+1, DateTime.Now.Hour, DateTime.Now.Minute, DateTime.Now.Second);
             });
 
             string connection = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=LojaVirtual;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";

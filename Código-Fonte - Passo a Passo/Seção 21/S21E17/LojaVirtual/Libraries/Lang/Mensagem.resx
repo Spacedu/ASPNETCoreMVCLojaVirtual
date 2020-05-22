@@ -163,10 +163,10 @@
     <value>Link de alteraçao de senha inválido!</value>
   </data>
   <data name="MSG_E016" xml:space="preserve">
-    <value>Usuário não encontrado, verifique o e-mail e senha digitado!</value>
+    <value>Usuário não encontrado, verifique o e-mail e/ou senha digitada!</value>
   </data>
   <data name="MSG_E017" xml:space="preserve">
-    <value>Usuário desativado! Entre em contato conosco para resolver essa situação!</value>
+    <value>Usuário desativado, entre em contato para resolver essa situação!</value>
   </data>
   <data name="MSG_S001" xml:space="preserve">
     <value>Registro salvo com sucesso!</value>

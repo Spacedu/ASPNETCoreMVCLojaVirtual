@@ -196,7 +196,7 @@ namespace LojaVirtual.Libraries.Lang {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário não encontrado, verifique o e-mail e senha digitado!.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário não encontrado, verifique o e-mail e/ou senha digitada!.
         /// </summary>
         public static string MSG_E016 {
             get {
@@ -205,7 +205,7 @@ namespace LojaVirtual.Libraries.Lang {
         }
         
         /// <summary>
-        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário desativado! Entre em contato conosco para resolver essa situação!.
+        ///   Consulta uma cadeia de caracteres localizada semelhante a Usuário desativado, entre em contato para resolver essa situação!.
         /// </summary>
         public static string MSG_E017 {
             get {

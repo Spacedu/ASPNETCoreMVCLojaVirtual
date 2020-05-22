@@ -50,17 +50,16 @@ namespace LojaVirtual.Areas.Cliente.Controllers
                 else
                 {
                     _loginCliente.Login(clienteDB);
-                }
-                
 
-                if(returnUrl == null)
-                {
-                    return RedirectToAction("Index", "Home", new { area = "" });
-                }
-                else
-                {
-                    return LocalRedirectPermanent(returnUrl);
-                }                
+                    if (returnUrl == null)
+                    {
+                        return RedirectToAction("Index", "Home", new { area = "" });
+                    }
+                    else
+                    {
+                        return LocalRedirectPermanent(returnUrl);
+                    }
+                }               
             }
             else
             {

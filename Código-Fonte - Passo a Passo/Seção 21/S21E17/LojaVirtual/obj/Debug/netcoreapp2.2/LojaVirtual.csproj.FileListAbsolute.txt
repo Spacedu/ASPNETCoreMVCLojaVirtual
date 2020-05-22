@@ -15830,10 +15830,10 @@ C:\Desenvolvimento\Web\S21E15\LojaVirtual\obj\Debug\netcoreapp2.2\LojaVirtual.cs
 C:\Desenvolvimento\Web\S21E15\LojaVirtual\obj\Debug\netcoreapp2.2\LojaVirtual.dll
 C:\Desenvolvimento\Web\S21E15\LojaVirtual\obj\Debug\netcoreapp2.2\LojaVirtual.pdb
 C:\Desenvolvimento\Web\S21E15\LojaVirtual\obj\Debug\netcoreapp2.2\LojaVirtual.genruntimeconfig.cache
+C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\appsettings.Development.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\appsettings.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\Connected Services\WSCorreios\ConnectedService.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\Properties\launchSettings.json
-C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\appsettings.Development.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\LojaVirtual.deps.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\LojaVirtual.runtimeconfig.json
 C:\ASPNETCoreMVCLojaVirtual\Código-Fonte - Passo a Passo\Seção 21\S21E17\LojaVirtual\bin\Debug\netcoreapp2.2\LojaVirtual.runtimeconfig.dev.json

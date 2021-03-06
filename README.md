@@ -3,7 +3,7 @@ Este é o código-fonte do curso __ASP.NET Core 2.2 - Aprenda construindo uma Lo
 
 __Pasta e seus destinos:__
 
-·· "Código-Fonte - Passo a Passo" - Use para consultar via Github (Browser) o código-fonte.
+·· "Código-Fonte - Passo a Passo" - Projeto migrado para o repositório: [https://github.com/Spacedu/ASPNETCoreMVCLojaVirtualZIP](https://github.com/Spacedu/ASPNETCoreMVCLojaVirtualZIP).
 
 ·· "Código-Fonte - Compactado" - Use para baixar o código-fonte da última aula de cada seção.
 
